@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор накоплений</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
@@ -26,9 +26,19 @@
     <input type="number" id="months" oninput="syncSlider('months')" placeholder="Пример: 10">
     <input type="range" id="monthsRange" min="1" max="60" step="1" oninput="syncInput('months')">
 
+    <!-- Новое поле "Мечта" -->
+    <label for="dream">Мечта:</label>
+    <input type="text" id="dream" placeholder="Например: купить дом, путешествовать по миру" oninput="updateDreamComments()">
+
     <button onclick="calculate()">Рассчитать</button>
 
     <div class="result" id="result"></div>
+
+    <!-- Блок комментариев -->
+    <div id="commentsSection">
+      <h3>Комментарии:</h3>
+      <ul id="commentsList"></ul>
+    </div>
   </div>
 
   <script src="script.js"></script>
