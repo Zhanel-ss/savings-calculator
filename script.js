@@ -28,12 +28,25 @@ function calculate() {
   const possibleMonthlySaving = income - expenses;
   const requiredMonthlySaving = goal / months;
 
+  const totalIncome = income * months;
+  const totalPossibleSavings = possibleMonthlySaving * months;
+  const remainingToGoal = goal - totalPossibleSavings;
+
   let resultText = '';
 
   if (possibleMonthlySaving >= requiredMonthlySaving) {
-    resultText = `🎉 Ура! Вы можете накопить на мечту — откладывайте по ${requiredMonthlySaving.toFixed(0)} ₸ в месяц.`;
+    resultText += `🎉 Ура! Вы можете накопить на мечту — откладывайте по ${requiredMonthlySaving.toFixed(0)} ₸ в месяц.\n\n`;
   } else {
-    resultText = `😞 Вам не хватает средств. Нужно откладывать ${requiredMonthlySaving.toFixed(0)} ₸ в месяц, но вы можете только ${possibleMonthlySaving.toFixed(0)} ₸.`;
+    resultText += `😞 Вам не хватает средств. Нужно откладывать ${requiredMonthlySaving.toFixed(0)} ₸ в месяц, но вы можете только ${possibleMonthlySaving.toFixed(0)} ₸.\n\n`;
+  }
+
+  resultText += `💸 Общий доход за ${months} мес: ${totalIncome.toLocaleString()} ₸\n`;
+  resultText += `💰 Накопится: ${totalPossibleSavings.toLocaleString()} ₸\n`;
+
+  if (remainingToGoal > 0) {
+    resultText += `🚧 До цели не хватает: ${remainingToGoal.toLocaleString()} ₸`;
+  } else {
+    resultText += `🌟 Вы даже превысите цель на ${(totalPossibleSavings - goal).toLocaleString()} ₸!`;
   }
 
   document.getElementById('result').textContent = resultText;
@@ -75,3 +88,4 @@ function updateDreamComments() {
     commentsList.appendChild(li);
   });
 }
+
