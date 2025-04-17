@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>💰 Калькулятор накоплений</h2>
+
+  <label>Доход (тенге):</label>
+  <input type="number" id="income" oninput="syncSlider('income')" placeholder="Пример: 500000">
+  <input type="range" id="incomeRange" min="0" max="2000000" step="10000" oninput="syncInput('income')">
+
+  <label>Обязательные расходы:</label>
+  <input type="number" id="expenses" oninput="syncSlider('expenses')" placeholder="Пример: 300000">
+  <input type="range" id="expensesRange" min="0" max="2000000" step="10000" oninput="syncInput('expenses')">
+
+  <label>Желаемая сумма накоплений:</label>
+  <input type="number" id="savingsGoal" oninput="syncSlider('savingsGoal')" placeholder="Пример: 1000000">
+  <input type="range" id="savingsGoalRange" min="0" max="10000000" step="10000" oninput="syncInput('savingsGoal')">
+
+  <label>Срок накопления (в месяцах):</label>
+  <input type="number" id="months" oninput="syncSlider('months')" placeholder="Пример: 10">
+  <input type="range" id="monthsRange" min="1" max="60" step="1" oninput="syncInput('months')">
+
+  <button onclick="calculate()">Рассчитать</button>
+
+  <div class="result" id="result"></div>
+</div>
