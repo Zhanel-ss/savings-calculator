@@ -1,10 +1,18 @@
-function syncSlider(field) {
-  document.getElementById(field + 'Range').value = document.getElementById(field).value;
-}
+// синхронизация ввода с ползунками
+const fields = ['income', 'expenses', 'savingsGoal', 'months'];
 
-function syncInput(field) {
-  document.getElementById(field).value = document.getElementById(field + 'Range').value;
-}
+fields.forEach(field => {
+  const input = document.getElementById(field);
+  const range = document.getElementById(field + 'Range');
+
+  input.addEventListener('input', () => {
+    range.value = input.value;
+  });
+
+  range.addEventListener('input', () => {
+    input.value = range.value;
+  });
+});
 
 function calculate() {
   const income = parseFloat(document.getElementById('income').value);
@@ -23,12 +31,13 @@ function calculate() {
   let resultText = '';
 
   if (possibleMonthlySaving >= requiredMonthlySaving) {
-    resultText = `🎉 Вы можете достичь цели! Откладывайте по ${requiredMonthlySaving.toFixed(0)} ₸ в месяц.`;
+    resultText = `🎉 Ура! Вы можете накопить на мечту — откладывайте по ${requiredMonthlySaving.toFixed(0)} ₸ в месяц.`;
   } else {
-    resultText = `⚠ Недостаточно средств. Нужно откладывать ${requiredMonthlySaving.toFixed(0)} ₸, но вы можете только ${possibleMonthlySaving.toFixed(0)} ₸.`;
+    resultText = `😞 Вам не хватает средств. Нужно откладывать ${requiredMonthlySaving.toFixed(0)} ₸ в месяц, но вы можете только ${possibleMonthlySaving.toFixed(0)} ₸.`;
   }
 
   document.getElementById('result').textContent = resultText;
+  updateDreamComments();
 }
 
 function updateDreamComments() {
@@ -40,23 +49,23 @@ function updateDreamComments() {
 
   if (dream.includes('дом')) {
     comments = [
-      "🏡 Дом — это серьезная цель. Начните с подушки безопасности.",
-      "Не забудьте про возможные ипотечные проценты и ремонт."
+      "🏡 Дом — это круто! Начни с подушки безопасности.",
+      "Рассмотри ипотеку или стройку поэтапно."
     ];
   } else if (dream.includes('путешеств')) {
     comments = [
-      "✈ Путешествие — отличная мотивация!",
-      "Заранее ищите акции на билеты и жилье — можно много сэкономить."
+      "✈ Путешествие — мотивация огонь!",
+      "Сохраняй бонусы и акции — путешествуй дешевле."
     ];
   } else if (dream.includes('машин')) {
     comments = [
-      "🚗 Крутая цель! Учитывайте также расходы на страховку и обслуживание.",
-      "Машина — это не только покупка, но и регулярные расходы."
+      "🚗 Удачи в покупке авто! Подумай и про обслуживание.",
+      "Сравни разные модели заранее — это сэкономит много."
     ];
   } else if (dream.length > 3) {
     comments = [
-      "✨ Ваша мечта вдохновляет!",
-      "Начните уже сегодня — шаг за шагом, и вы дойдете."
+      "✨ Мечта вдохновляет! Двигайся к ней шаг за шагом.",
+      "Каждый тенге, который ты откладываешь — это кирпичик к цели!"
     ];
   }
 
