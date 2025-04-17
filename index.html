@@ -4,47 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор накоплений</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h2>💰 Калькулятор накоплений</h2>
 
-    <div class="input-group">
-      <label for="income">Доход (тенге):</label>
-      <input type="number" id="income" oninput="syncSlider('income')" placeholder="Пример: 500000">
-      <input type="range" id="incomeRange" min="0" max="2000000" step="10000" oninput="syncInput('income')">
-    </div>
+    <label>Доход (тенге):</label>
+    <input type="number" id="income" oninput="syncSlider('income')" placeholder="Пример: 500000">
+    <input type="range" id="incomeRange" min="0" max="2000000" step="10000" oninput="syncInput('income')">
 
-    <div class="input-group">
-      <label for="expenses">Обязательные расходы:</label>
-      <input type="number" id="expenses" oninput="syncSlider('expenses')" placeholder="Пример: 300000">
-      <input type="range" id="expensesRange" min="0" max="2000000" step="10000" oninput="syncInput('expenses')">
-    </div>
+    <label>Обязательные расходы:</label>
+    <input type="number" id="expenses" oninput="syncSlider('expenses')" placeholder="Пример: 300000">
+    <input type="range" id="expensesRange" min="0" max="2000000" step="10000" oninput="syncInput('expenses')">
 
-    <div class="input-group">
-      <label for="savingsGoal">Желаемая сумма накоплений:</label>
-      <input type="number" id="savingsGoal" oninput="syncSlider('savingsGoal')" placeholder="Пример: 1000000">
-      <input type="range" id="savingsGoalRange" min="0" max="10000000" step="10000" oninput="syncInput('savingsGoal')">
-    </div>
+    <label>Желаемая сумма накоплений:</label>
+    <input type="number" id="savingsGoal" oninput="syncSlider('savingsGoal')" placeholder="Пример: 1000000">
+    <input type="range" id="savingsGoalRange" min="0" max="10000000" step="10000" oninput="syncInput('savingsGoal')">
 
-    <div class="input-group">
-      <label for="months">Срок накопления (в месяцах):</label>
-      <input type="number" id="months" oninput="syncSlider('months')" placeholder="Пример: 10">
-      <input type="range" id="monthsRange" min="1" max="60" step="1" oninput="syncInput('months')">
-    </div>
+    <label>Срок накопления (в месяцах):</label>
+    <input type="number" id="months" oninput="syncSlider('months')" placeholder="Пример: 10">
+    <input type="range" id="monthsRange" min="1" max="60" step="1" oninput="syncInput('months')">
 
-    <div class="input-group">
-      <label for="dream">Мечта:</label>
-      <input type="text" id="dream" placeholder="Например: купить дом, путешествовать по миру" oninput="updateDreamComments()">
-    </div>
+    <label>Мечта:</label>
+    <input type="text" id="dream" placeholder="Например: купить дом, путешествовать" oninput="updateDreamComments()">
 
     <button onclick="calculate()">Рассчитать</button>
 
     <div class="result" id="result"></div>
 
-    <div id="commentsSection">
-      <h3>Комментарии:</h3>
+    <div class="comments" id="commentsSection">
       <ul id="commentsList"></ul>
     </div>
   </div>
