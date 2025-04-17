@@ -1,8 +1,80 @@
-/* Стиль для результата после расчета */
+/* Общий стиль для страницы */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+/* Стили для группы ввода */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-group input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Стиль для кнопки */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Стиль для результата */
 .result {
   font-size: 24px;
   font-weight: bold;
-  color: #4CAF50;
+  color: #FF4500;
   text-align: center;
   margin-top: 20px;
   transition: all 0.3s ease-in-out;
@@ -10,16 +82,36 @@
 
 /* Стиль для блока с комментариями */
 #commentsSection {
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #FF6347; /* Яркий оранжевый */
+  color: #FF6347;
   text-align: center;
   margin-top: 30px;
   padding: 10px;
   border: 2px solid #FF6347;
   border-radius: 10px;
-  background-color: #FFF8DC; /* Светлый фон */
+  background-color: #FFF8DC;
   animation: fadeIn 1.5s ease-in-out;
+}
+
+#commentsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#commentsList li {
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  color: #8A2BE2;
+  margin: 10px 0;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+#commentsList li:hover {
+  color: #FFD700;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 /* Анимация появления текста */
@@ -32,21 +124,5 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Стиль для каждого комментария */
-#commentsList li {
-  font-size: 18px;
-  font-family: 'Arial', sans-serif;
-  color: #8A2BE2; /* Пурпурный цвет */
-  margin: 10px 0;
-  padding: 5px;
-  transition: all 0.2s ease;
-}
-
-#commentsList li:hover {
-  color: #FFD700; /* Цвет при наведении */
-  transform: scale(1.1);
-  cursor: pointer;
 }
 
