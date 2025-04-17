@@ -1,73 +1,72 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f3f3;
   padding: 20px;
-  display: flex;
-  justify-content: center;
+  color: #333;
 }
 
 .container {
-  width: 100%;
   max-width: 500px;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
-  color: #4CAF50;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 label {
-  font-weight: bold;
   display: block;
   margin-top: 20px;
-  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input[type="number"],
 input[type="text"] {
   width: 100%;
   padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 16px;
   border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 input[type="range"] {
   width: 100%;
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 button {
-  margin-top: 20px;
   width: 100%;
   padding: 12px;
+  margin-top: 25px;
   background-color: #4CAF50;
   color: white;
-  font-size: 18px;
   border: none;
-  border-radius: 8px;
+  font-size: 16px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #45a049;
 }
 
 .result {
-  margin-top: 25px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
-  color: #FF4500;
-  text-align: center;
+  margin-top: 25px;
+  white-space: pre-line;
+  color: #2c3e50;
 }
 
 .comments {
   margin-top: 20px;
-  background-color: #fff8dc;
-  border-left: 4px solid #ffa500;
-  padding: 15px;
-  border-radius: 8px;
 }
 
 .comments ul {
@@ -76,7 +75,9 @@ button {
 }
 
 .comments li {
-  margin-bottom: 8px;
-  font-style: italic;
-  color: #8a2be2;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-top: 5px;
+  border-left: 5px solid #4CAF50;
+  border-radius: 5px;
 }
