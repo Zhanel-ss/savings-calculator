@@ -1,65 +1,52 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f0f4f8;
-  margin: 0;
-  padding: 40px;
-}
-
-.container {
-  max-width: 500px;
-  margin: auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-label {
-  font-weight: 500;
-  display: block;
-  margin-top: 15px;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  font-size: 16px;
-  background: #2e8b57;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #246b44;
-}
-
+/* Стиль для результата после расчета */
 .result {
-  margin-top: 25px;
-  font-size: 16px;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4CAF50;
+  text-align: center;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
-input[type="range"] {
-  width: 100%;
-  margin-top: 5px;
+/* Стиль для блока с комментариями */
+#commentsSection {
+  font-size: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #FF6347; /* Яркий оранжевый */
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  border: 2px solid #FF6347;
+  border-radius: 10px;
+  background-color: #FFF8DC; /* Светлый фон */
+  animation: fadeIn 1.5s ease-in-out;
 }
+
+/* Анимация появления текста */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Стиль для каждого комментария */
+#commentsList li {
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  color: #8A2BE2; /* Пурпурный цвет */
+  margin: 10px 0;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+#commentsList li:hover {
+  color: #FFD700; /* Цвет при наведении */
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
