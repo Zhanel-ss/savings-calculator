@@ -2,32 +2,33 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Калькулятор накоплений</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
     <h2>💰 Калькулятор накоплений</h2>
 
     <label>Доход (тенге):</label>
-    <input type="number" id="income" placeholder="Пример: 500000">
-    <input type="range" id="incomeRange" min="0" max="2000000" step="10000">
+    <input type="number" id="income" placeholder="Пример: 500000" />
+    <input type="range" id="incomeRange" min="0" max="2000000" step="10000" />
 
     <label>Обязательные расходы:</label>
-    <input type="number" id="expenses" placeholder="Пример: 300000">
-    <input type="range" id="expensesRange" min="0" max="2000000" step="10000">
+    <input type="number" id="expenses" placeholder="Пример: 300000" />
+    <input type="range" id="expensesRange" min="0" max="2000000" step="10000" />
 
     <label>Желаемая сумма накоплений:</label>
-    <input type="number" id="savingsGoal" placeholder="Пример: 1000000">
-    <input type="range" id="savingsGoalRange" min="0" max="10000000" step="10000">
+    <input type="number" id="savingsGoal" placeholder="Пример: 1000000" />
+    <input type="range" id="savingsGoalRange" min="0" max="10000000" step="10000" />
 
     <label>Срок накопления (в месяцах):</label>
-    <input type="number" id="months" placeholder="Пример: 10">
-    <input type="range" id="monthsRange" min="1" max="60" step="1">
+    <input type="number" id="months" placeholder="Пример: 10" />
+    <input type="range" id="monthsRange" min="1" max="60" step="1" />
 
     <label>Мечта:</label>
-    <input type="text" id="dream" placeholder="Например: купить дом, путешествовать" oninput="updateDreamComments()">
+    <input type="text" id="dream" placeholder="Например: Путешествие" />
 
     <button onclick="calculate()">Рассчитать</button>
 
@@ -36,6 +37,8 @@
     <div class="comments" id="commentsSection">
       <ul id="commentsList"></ul>
     </div>
+
+    <canvas id="savingsChart" style="margin-top: 40px; max-width: 100%;"></canvas>
   </div>
 
   <script src="script.js"></script>
